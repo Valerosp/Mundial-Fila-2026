@@ -599,15 +599,86 @@
             text-align: center; 
         }
 
-        .exacto { background-color: var(--accent-green) !important; color: white !important; font-weight: bold; border-radius:4px; display:flex; justify-content:center; align-items:center; height:28px; width:90%; margin:0 auto; font-size:10px; }
-        .signo { background-color: var(--accent-gold) !important; color: black !important; font-weight: bold; border-radius:4px; display:flex; justify-content:center; align-items:center; height:28px; width:90%; margin:0 auto; font-size:10px; }
-        .fallo { background-color: #e74c3c !important; color: white !important; font-weight: bold; border-radius:4px; display:flex; justify-content:center; align-items:center; height:28px; width:90%; margin:0 auto; font-size:10px; }
-        .blanco { background: rgba(255,255,255,0.1) !important; color: white !important; font-weight: bold; border-radius:4px; border:1px solid rgba(255,255,255,0.2); display:flex; justify-content:center; align-items:center; height:28px; width:90%; margin:0 auto; font-size:10px; }
+        .exacto { 
+            background-color: var(--accent-green) !important; 
+            color: white !important; 
+            font-weight: bold; 
+            border-radius:4px; 
+            display:flex; 
+            justify-content:center; 
+            align-items:center; 
+            height:28px; 
+            width:90%; 
+            margin:0 auto; 
+            font-size:10px; 
+        }
         
-        .total-pts { background: rgba(59, 130, 246, 0.1) !important; color: #3b82f6 !important; font-weight: 800; font-size: 14px; }
-        .td-pos { font-size: 16px; font-weight: 800; color: var(--text-muted); }
-        .td-nombre { font-weight: 700; color: #ffffff; }
-        .td-total-gen { color: #3b82f6 !important; font-weight: 800; font-size: 14px; }
+        .signo { 
+            background-color: var(--accent-gold) !important; 
+            color: black !important; 
+            font-weight: bold; 
+            border-radius:4px; 
+            display:flex; 
+            justify-content:center; 
+            align-items:center; 
+            height:28px; 
+            width:90%; 
+            margin:0 auto; 
+            font-size:10px; 
+        }
+        
+        .fallo { 
+            background-color: #e74c3c !important; 
+            color: white !important; 
+            font-weight: bold; 
+            border-radius:4px; 
+            display:flex; 
+            justify-content:center; 
+            align-items:center; 
+            height:28px; 
+            width:90%; 
+            margin:0 auto; 
+            font-size:10px; 
+        }
+        
+        .blanco { 
+            background: rgba(255,255,255,0.1) !important; 
+            color: white !important; 
+            font-weight: bold; 
+            border-radius:4px; 
+            border:1px solid rgba(255,255,255,0.2); 
+            display:flex; 
+            justify-content:center; 
+            align-items:center; 
+            height:28px; 
+            width:90%; 
+            margin:0 auto; 
+            font-size:10px; 
+        }
+        
+        .total-pts { 
+            background: rgba(59, 130, 246, 0.1) !important; 
+            color: #3b82f6 !important; 
+            font-weight: 800; 
+            font-size: 14px; 
+        }
+        
+        .td-pos { 
+            font-size: 16px; 
+            font-weight: 800; 
+            color: var(--text-muted); 
+        }
+        
+        .td-nombre { 
+            font-weight: 700; 
+            color: #ffffff; 
+        }
+        
+        .td-total-gen { 
+            color: #3b82f6 !important; 
+            font-weight: 800; 
+            font-size: 14px; 
+        }
 
         /* ESTILOS MODAL ESTADÍSTICAS */
         #modalEstadisticas { 
@@ -724,7 +795,9 @@
           </div>
       </div>
 
-      <div id="cargandoPlantillaMsg" style="text-align:center; font-weight:bold; padding:20px; color:var(--accent-gold);">Sincronizando Estado... ⏳</div>
+      <div id="cargandoPlantillaMsg" style="text-align:center; font-weight:bold; padding:20px; color:var(--accent-gold);">
+          Sincronizando Estado... ⏳
+      </div>
 
       <!-- VISTA 0: INICIO -->
       <div id="vistaInicio" style="display:none;">
@@ -788,19 +861,27 @@
           <div class="tarjeta" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;">
             <h2 style="color:#60a5fa !important;">🍿 SALSEO</h2>
             <div style="margin-bottom:15px;">
-                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:var(--accent-gold) !important;">🔮 VALERINHA: <span id="lblValerinha" style="color:white; font-weight:normal;"></span></p>
+                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:var(--accent-gold) !important;">
+                    🔮 VALERINHA: <span id="lblValerinha" style="color:white; font-weight:normal;"></span>
+                </p>
                 <input type="text" id="valerinhaRespuesta" placeholder="Respuesta Valerinha...">
             </div>
             <div style="margin-bottom:15px;">
-                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:#34d399 !important;">🏃‍♂️ IRLINHA: <span id="lblIrlinha" style="color:white; font-weight:normal;"></span></p>
+                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:#34d399 !important;">
+                    🏃‍♂️ IRLINHA: <span id="lblIrlinha" style="color:white; font-weight:normal;"></span>
+                </p>
                 <input type="text" id="irlinhaRespuesta" placeholder="Respuesta Irlinha...">
             </div>
             <div style="margin-bottom:15px;">
-                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:#f87171 !important;">🇪🇸 SANTINHA: <span id="spanSantinha" style="color:white; font-weight:normal;"></span></p>
+                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:#f87171 !important;">
+                    🇪🇸 SANTINHA: <span id="spanSantinha" style="color:white; font-weight:normal;"></span>
+                </p>
                 <input type="text" id="santinhaRespuesta" placeholder="Respuesta Santinha...">
             </div>
             <div style="margin-bottom:15px; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
-                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:#60a5fa !important;">🌩️ LA TRONPÀ!: <span id="lblTronpa" style="color:white; font-weight:normal;"></span></p>
+                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:#60a5fa !important;">
+                    🌩️ LA TRONPÀ!: <span id="lblTronpa" style="color:white; font-weight:normal;"></span>
+                </p>
                 <div style="display:flex; gap:10px; justify-content:center; align-items:center;">
                   <select id="tronpaApuesta" style="width:50%; height:45px; margin:0;">
                       <option value="1">Riesgo: 1 Pt</option>
@@ -811,7 +892,9 @@
                 </div>
             </div>
             <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
-                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:#f43f5e !important;">💣 BOMBA GARNACHA: <span id="lblBomba" style="color:white; font-weight:normal;"></span></p>
+                <p style="font-size: 12px; margin-bottom:4px; font-weight:bold; color:#f43f5e !important;">
+                    💣 BOMBA GARNACHA: <span id="lblBomba" style="color:white; font-weight:normal;"></span>
+                </p>
                 <div style="display:flex; align-items:center; gap:15px; justify-content:center;">
                    <div style="display:flex; flex-direction:column; align-items:center; gap:3px;">
                       <button type="button" class="btn-step step-btn-gen" data-target="bombaLocal" data-val="1">+</button>
@@ -828,7 +911,9 @@
             </div>
           </div>
           <button id="btnEnviar" class="btn-principal" style="margin-top:5px;">Confirmar Pronósticos 🚀</button>
-          <div id="mensajeConfirmacion" style="display:none; color: var(--accent-green); margin-top: 15px; font-weight:bold; text-align:center; padding:10px; background:rgba(16,172,132,0.1); border-radius:8px;">¡Apuesta guardada con éxito! ✅</div>
+          <div id="mensajeConfirmacion" style="display:none; color: var(--accent-green); margin-top: 15px; font-weight:bold; text-align:center; padding:10px; background:rgba(16,172,132,0.1); border-radius:8px;">
+              ¡Apuesta guardada con éxito! ✅
+          </div>
         </div>
       </div>
 
@@ -930,7 +1015,6 @@
           <div id="textoEstadoEspeciales" style="font-size:14px; font-weight:bold; color:white; margin-bottom:10px; display:none; background:rgba(0,0,0,0.3); padding:10px; border-radius:8px; text-align:center;">APUESTAS ESPECIALES NO DISPONIBLES</div>
           <button id="btnVerEspeciales" class="btn-principal" style="background:white !important; color:var(--accent-green) !important; display:none;"></button>
         </div>
-        
         <div id="mensajeEspecialesCerrado" style="display:none; padding:15px; font-weight:bold; margin-bottom:20px; text-align:center; font-size:14px; border-radius:8px;"></div>
         
         <div id="zonaFormularioEspeciales" class="tarjeta" style="display:none; border-left:4px solid var(--accent-green) !important;">
@@ -1266,7 +1350,7 @@
         }).join("");
 
         let html = `
-          <h3 style="text-align:center; color:white; margin-top:0; font-size:16px;">${equiposLiga[local]} ${local} <span style="color:var(--text-muted); font-size:12px; margin:0 5px;">VS</span> ${visita} ${equiposLiga[visita]}</h3>
+          <h3 style="text-align:center; color:white; margin-top:0; font-size:16px;">${equiposLiga[local]||''} ${local} <span style="color:var(--text-muted); font-size:12px; margin:0 5px;">VS</span> ${visita} ${equiposLiga[visita]||''}</h3>
           <div style="background:rgba(0,0,0,0.3); padding:15px; border-radius:12px; margin-top:20px;">
             <h4 style="margin:0 0 10px 0; color:var(--text-muted); font-size:11px;">📊 PROBABILIDAD REAL</h4>
             <div style="margin-bottom:10px;"><div style="display:flex; justify-content:space-between; font-size:13px; color:white; font-weight:bold;"><span>Gana ${local}</span><span>${winL.toFixed(0)}%</span></div><div class="barra-fondo"><div class="barra-progreso" style="width:${winL}%; background:#3b82f6;"></div></div></div>
@@ -1322,7 +1406,7 @@
 
     function llenarDesplegablesEspeciales() {
         let optSel = `<option value="">-- Equipo --</option>`; 
-        Object.keys(equiposLiga).sort().forEach(p => optSel += `<option value="${p}">${equiposLiga[p]} ${p}</option>`);
+        Object.keys(codigosLiga).sort().forEach(p => optSel += `<option value="${p}">${p}</option>`);
         let optJug = `<option value="">-- Jugador --</option>`; 
         listaOficialNombres.forEach(n => optJug += `<option value="${n}">${n}</option>`);
         
@@ -1403,6 +1487,7 @@
             }
         });
 
+        // Recalcular lógica Valerinha (Votos, Desvíos) SOLO PARA VER QUIÉN ATACA A QUIÉN
         let votos = {}; 
         try { 
             const vSnap = await getDocs(collection(db, "votos_valerinha_jornada_" + jorActualStr)); 
@@ -1435,6 +1520,7 @@
             }
         }
 
+        // Aplicamos los textos pero NO el castigo por inactividad
         listaProv.forEach(j => {
             j.val_ganados = 0; 
             j.val_perdidos = 0; 
@@ -1451,6 +1537,7 @@
                         j.dec_val = `⚔️ Resta -1 a ${finalTarget}` + (isDiverted ? " (Desvío)" : ""); 
                     }
                 } else { 
+                    // NO HAY CASTIGO AÚN EN PROVISIONAL
                     j.dec_val = `⏳ Pendiente de voto`; 
                 }
             }
@@ -1476,6 +1563,7 @@
                 let p_val = Number(j.p_val) || 0; 
                 let p_irl = Number(j.p_irl) || 0; 
                 let p_san = Number(j.p_san) || 0;
+                // MATEMATICA J1
                 let totJornada = (Number(j.base) || 0) + p_val; 
                 let totGeneral = totJornada + p_irl + p_san;
                 return { ...j, totalJornada: totJornada, totalGeneral: totGeneral };
@@ -1501,6 +1589,7 @@
                 let p_irl = Number(j.p_irl) || 0; 
                 let p_san = Number(j.p_san) || 0;
                 
+                // REGLA LIGA: Irlinha y Santinha NO afectan a la Jornada, pero SÍ a la General
                 let totJornada = (Number(j.base) || 0) + p_val;
                 let totGeneral = (Number(ant.puntosAcumulados) || 0) + totJornada + p_irl + p_san;
                 
@@ -1748,7 +1837,7 @@
                     
                     htmlPartidos += `
                     <div class="fila" style="margin-bottom:15px; padding:12px 10px; background:rgba(0,0,0,0.25); border-radius:12px; display:flex; justify-content:space-between; align-items:center; border:1px solid rgba(255,255,255,0.05);">
-                        <div style="flex:1; text-align:right; font-weight:900; font-size:15px; padding-right:12px; white-space:nowrap;">${flagL} ${codL}</div>
+                        <div style="flex:1; text-align:right; font-weight:900; font-size:15px; padding-right:12px; white-space:nowrap;">${codL}</div>
                         <div style="display:flex; gap:10px; align-items:center; justify-content:center;">
                            <div style="display:flex; flex-direction:column; align-items:center; gap:3px;">
                                <button type="button" class="btn-step step-btn-gen" data-target="playPL_${i}" data-val="1" style="${btnStyle}">+</button>
@@ -1762,7 +1851,7 @@
                                <button type="button" class="btn-step step-btn-gen" data-target="playPV_${i}" data-val="-1" style="${btnStyle}">-</button>
                            </div>
                         </div>
-                        <div style="flex:1; text-align:left; font-weight:900; font-size:15px; padding-left:12px; white-space:nowrap;">${codV} ${flagV}</div>
+                        <div style="flex:1; text-align:left; font-weight:900; font-size:15px; padding-left:12px; white-space:nowrap;">${codV}</div>
                         <div style="width:40px; display:flex; justify-content:flex-end;">
                             <button type="button" onclick="window.abrirEstadisticas(${i})" title="Ver Estadísticas" style="background:linear-gradient(135deg, #3b82f6, #2563eb); border:none; border-radius:6px; color:white; cursor:pointer; padding:8px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(37,99,235,0.4); height:40px; width:40px; transition:0.2s;">
                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
@@ -2229,7 +2318,7 @@
                     let lVis = plantilla[idx]?.visita || ""; 
                     let cL = codigosLiga[lLoc] || (lLoc ? lLoc.substring(0,3).toUpperCase() : "");
                     let cV = codigosLiga[lVis] || (lVis ? lVis.substring(0,3).toUpperCase() : "");
-                    let labelPartido = (lLoc && lVis) ? `<span style="white-space:nowrap">${equiposLiga[lLoc]||''} ${cL}</span> - <span style="white-space:nowrap">${equiposLiga[lVis]||''} ${cV}</span>` : `Partido ${idx+1}`; 
+                    let labelPartido = (lLoc && lVis) ? `<span style="white-space:nowrap">${cL}</span> - <span style="white-space:nowrap">${cV}</span>` : `Partido ${idx+1}`; 
                     htmlMatrix += `<tr><td><strong>${labelPartido}</strong></td><td style="background:rgba(0,0,0,0.5);">R</td>${f}</tr>`; 
                 });
                 
@@ -2349,7 +2438,7 @@
             }
             let cL = codigosLiga[lLoc] || (lLoc ? lLoc.substring(0,3).toUpperCase() : "");
             let cV = codigosLiga[lVis] || (lVis ? lVis.substring(0,3).toUpperCase() : "");
-            let lbl = (lLoc && lVis) ? `<span style="white-space:nowrap">${equiposLiga[lLoc]||''} ${cL}</span> - <span style="white-space:nowrap">${equiposLiga[lVis]||''} ${cV}</span>` : `Partido ${i+1}`;
+            let lbl = (lLoc && lVis) ? `<span style="white-space:nowrap">${cL}</span> - <span style="white-space:nowrap">${cV}</span>` : `Partido ${i+1}`;
             let rRes = resPartidos[i] || "-"; 
             return `<tr><td><strong>${lbl}</strong></td><td style="background:rgba(0,0,0,0.5);">${rRes}</td>${f}</tr>`; 
         }).join("");
@@ -2483,7 +2572,7 @@
             }
             let cL = codigosLiga[lLoc] || (lLoc ? lLoc.substring(0,3).toUpperCase() : "");
             let cV = codigosLiga[lVis] || (lVis ? lVis.substring(0,3).toUpperCase() : "");
-            let lbl = (lLoc && lVis) ? `<span style="white-space:nowrap">${equiposLiga[lLoc]||''} ${cL}</span> - <span style="white-space:nowrap">${equiposLiga[lVis]||''} ${cV}</span>` : `Partido ${i+1}`;
+            let lbl = (lLoc && lVis) ? `<span style="white-space:nowrap">${cL}</span> - <span style="white-space:nowrap">${cV}</span>` : `Partido ${i+1}`;
             let rRes = resPartidos[i] || "-"; 
             return `<tr><td><strong>${lbl}</strong></td><td style="background:rgba(0,0,0,0.5);">${rRes}</td>${f}</tr>`; 
         }).join("");
