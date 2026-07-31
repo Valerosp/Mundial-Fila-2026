@@ -126,7 +126,7 @@
     <div style="text-align: center; margin-bottom: 10px;">
         <img src="https://img.icons8.com/color/240/000000/trophy.png" alt="La Liga" style="max-height: 100px; width: auto; filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.2));">
     </div>
-    <h1>👑 Panel de Administrador - La Liga</h1>
+    <h1>👑 Panel de Administrador - La Liga 26/27</h1>
 
     <div class="menu-pestanas">
         <button id="btnTabAdmin0" class="pestana activa" style="background:#f39c12; color:white;">⚙️ 1. Preparar</button>
@@ -137,7 +137,7 @@
         <button id="btnTabAdmin5" class="pestana" style="background:#e84393; color:white;">⭐ 6. Especiales</button>
     </div>
 
-    <!-- VISTA 1: PREPARAR -->
+    <!-- MENU 1: PREPARAR -->
     <div id="vistaAdmin0">
         <div class="tarjeta" style="background: #fffaf0; border-left: 5px solid #f39c12;">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 15px;">
@@ -150,8 +150,9 @@
             <div class="fila" style="margin-bottom:15px;">
                 <label style="font-weight:bold; color:#2c3e50;">Jornada a preparar:</label>
                 <select id="jorConfig" style="width: 120px;">
-                    <!-- Rellenado por JS (1 a 38) -->
+                    <!-- 38 Jornadas generadas por JS -->
                 </select>
+                <span style="font-size:12px; color:#7f8c8d; margin-left:10px;">Val/Irl/San valen los puntos configurados según normativa.</span>
             </div>
             
             <div class="grid-2-columnas">
@@ -167,7 +168,7 @@
                     <div class="fila" style="margin-top:15px;">
                         <label style="font-weight:bold;">Nº Partidos:</label>
                         <input type="number" id="numPartidosConfig" value="10" min="1" max="15" style="width: 60px;">
-                        <button id="btnGenerarCajasPartidos" class="btn-secundario" style="background:#d35400; color:white; margin-left:10px;">Generar Partidos</button>
+                        <button id="btnGenerarCajasPartidos" class="btn-secundario" style="background:#d35400; color:white; margin-left:10px;">Generar Cajas</button>
                     </div>
                 </div>
                 <div style="background: #fdfefe; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
@@ -180,7 +181,7 @@
                         <label>Ganador Definitiva:</label>
                         <input type="number" id="premioDef" value="29.00" step="0.10" style="width:70px;"> €
                     </div>
-                    <h3 style="margin-top:15px; color:#8e44ad; font-size:14px; border-bottom:1px solid #eee; padding-bottom:5px;">🏆 Botes Globales</h3>
+                    <h3 style="margin-top:15px; color:#8e44ad; font-size:14px; border-bottom:1px solid #eee; padding-bottom:5px;">🏆 Botes Globales (Final Temporada)</h3>
                     <div class="fila">
                         <label>General Definitiva:</label>
                         <input type="number" id="premioGenDef" value="261.00" step="0.10" style="width:70px;"> 
@@ -223,7 +224,7 @@
     <div id="vistaAdmin1" style="display: none;">
         <div class="tarjeta" style="background: #e8f4f8; border-left: 5px solid #2980b9;">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 15px;">
-                <h2 style="color: #2980b9; margin:0;">📝 Generar Provisional</h2>
+                <h2 style="color: #2980b9; margin:0;">📝 Generar Clasificación Provisional</h2>
                 <div style="background:#2980b9; color:white; padding:5px 10px; border-radius:5px; font-weight:bold; font-size:14px;">
                     Última cerrada: J<span id="lblUltimaCerrada">-</span>
                 </div>
@@ -359,7 +360,7 @@
         </div>
         
         <div id="zonaTablaControl" style="margin-top:20px; display:none; overflow-x:auto;">
-            <h3 style="color:#2c3e50; text-align:center;" id="txtCabeceraControl"></h3>
+            <h3 style="color:#2c3e50; text-align:center; background:#e8f4f8; padding:10px; border-radius:5px;" id="txtCabeceraControl"></h3>
             <table id="tablaChivatosBase"></table>
         </div>
 
@@ -373,11 +374,11 @@
             <div id="zonaEditarPlazos" style="display:none; margin-top:15px; border-top:1px solid #ccc; padding-top:15px;">
                 <div class="grid-2-columnas">
                     <div>
-                        <label style="font-weight:bold;">⚽ Límite Jornada (Partidos):</label>
+                        <label style="font-weight:bold;">⚽ Límite Pronósticos:</label>
                         <input type="datetime-local" id="editLimiteJornada">
                     </div>
                     <div>
-                        <label style="font-weight:bold;">👑 Límite Valerinha (Votos):</label>
+                        <label style="font-weight:bold;">👑 Límite Valerinha:</label>
                         <input type="datetime-local" id="editLimiteValerinha">
                     </div>
                 </div>
@@ -395,8 +396,8 @@
     <!-- VISTA 6: ESPECIALES -->
     <div id="vistaAdmin5" style="display:none;">
         <div class="tarjeta" style="background: #fce4ec; border-left: 5px solid #e84393;">
-            <h2 style="color: #e84393; margin-top:0;">⭐ Configurar Apuestas Especiales</h2>
-            <p style="font-size:13px; color:#7f8c8d;">Las 11 preguntas de Salseo Global ya están preconfiguradas. Controla la apertura y cierre.</p>
+            <h2 style="color: #e84393; margin-top:0;">⭐ Configurar Apuestas Especiales (Pre-Temporada)</h2>
+            <p style="font-size:13px; color:#7f8c8d;">Las 11 preguntas globales ya están integradas. Decide los plazos.</p>
             
             <div class="fila" style="margin-top:15px; background:white; padding:10px; border-radius:5px; border:1px solid #ddd;">
                 <label style="font-weight:bold; color:#e84393;">⏰ Fecha Límite Especiales:</label>
@@ -424,7 +425,7 @@
         <div class="tarjeta" style="background: #fffaf0; border-left: 5px solid #f39c12; margin-top:20px;">
             <h2 style="color: #d35400; margin-top:0;">⚖️ Evaluación Final (Jornada 38 Terminada)</h2>
             <p style="font-size:13px; color:#7f8c8d;">Una vez finalizada la Liga, evalúa manualmente cada jugador para evitar errores de escritura.</p>
-            <button id="btnEvaluarEspecialesManual" class="btn-principal" style="background:#f39c12;">Iniciar Corrección Manual</button>
+            <button id="btnEvaluarEspecialesMenu" class="btn-principal" style="background:#f39c12;">Iniciar Corrección Manual</button>
             
             <div id="zonaEvaluacionManualEspeciales" style="margin-top:20px; display:none; border:3px dashed #8e44ad; padding:15px; background:white;">
                 <h3 style="color:#8e44ad; margin-top:0;">⚖️ Asignación de Puntos Especiales</h3>
@@ -458,14 +459,6 @@
     const app = initializeApp(firebaseConfig); 
     const db = getFirestore(app);
 
-    const seleccionesMundial = { 
-        "Deportivo Alavés": "🔵⚪", "Atlético de Madrid": "🔴⚪", "FC Barcelona": "🔵🔴", "RC Celta": "🩵", 
-        "RC Deportivo de A Coruña": "💙🤍", "Elche CF": "🌴", "RCD Espanyol": "🦜", "Getafe CF": "✈️", 
-        "Levante UD": "🐸", "Málaga CF": "⚓", "CA Osasuna": "🐂", "Real Racing Club": "🟢⚪", 
-        "Rayo Vallecano": "⚡", "Real Betis": "💚🤍", "Real Madrid": "👑", "Real Sociedad": "Tx", 
-        "Sevilla FC": "🔴⚪", "Valencia CF": "🦇", "Villarreal CF": "💛", "Athletic Club": "🦁" 
-    };
-
     const codigosLiga = { 
         "Deportivo Alavés": "ALA", "Atlético de Madrid": "ATM", "FC Barcelona": "BAR", "RC Celta": "CEL", 
         "RC Deportivo de A Coruña": "DEP", "Elche CF": "ELC", "RCD Espanyol": "ESP", "Getafe CF": "GET", 
@@ -475,9 +468,9 @@
     };
 
     const listaOficialNombres = [
-        "L'Ant", "Barri", "Alberto", "Gonxi", "Héctor", "Irles", "Bambino", "Tron", "Sants", "Valer", 
-        "Víctor", "Dardos", "Bicho", "Vinxi", "Mazon", "Junior", "Txus", "Ors", "Pech", "Manolo", 
-        "Gil", "Pampli", "Jaime", "Martos", "Raúl", "Boque", "Isi", "Fran", "Kevin"
+        "Valero", "Alberto", "Albertini", "Dardos", "Bicho", "Gonxi", "Héctor", "Irles", "Bambino", 
+        "Mazón", "Juli", "Junior", "Kevin", "Martos", "Pampli", "Raúl", "Santos", "Tron", "Chus", 
+        "Víctor", "Vinxi", "Ximo"
     ];
     
     const preguntasEspecialesGlobal = [
@@ -561,7 +554,7 @@
                 let selAdmin = document.getElementById('jorConsultaAdmin'); 
                 if(selAdmin) selAdmin.value = jorCerrada; 
             }
-
+            
             document.getElementById('btnGenerarCajasPartidos').click();
         } catch(e) {}
     });
@@ -607,16 +600,16 @@
 
     function obtenerGanadoresDesempate(jugadores, campoPuntos) {
         if(jugadores.length === 0) return [];
-        let maxPts = Math.max(...jugadores.map(j => j[campoPuntos])); 
-        let emps = jugadores.filter(j => j[campoPuntos] === maxPts); 
+        let maxPts = Math.max(...jugadores.map(j => Number(j[campoPuntos]))); 
+        let emps = jugadores.filter(j => Number(j[campoPuntos]) === maxPts); 
         if(emps.length === 1) return emps.map(j => j.nombre);
         
-        let maxEx = Math.max(...emps.map(j => j.c_exactos)); 
-        emps = emps.filter(j => j.c_exactos === maxEx); 
+        let maxEx = Math.max(...emps.map(j => Number(j.c_exactos))); 
+        emps = emps.filter(j => Number(j.c_exactos) === maxEx); 
         if(emps.length === 1) return emps.map(j => j.nombre);
         
-        let maxSig = Math.max(...emps.map(j => j.c_signos)); 
-        emps = emps.filter(j => j.c_signos === maxSig); 
+        let maxSig = Math.max(...emps.map(j => Number(j.c_signos))); 
+        emps = emps.filter(j => Number(j.c_signos) === maxSig); 
         if(emps.length === 1) return emps.map(j => j.nombre);
         
         emps.forEach(j => { 
@@ -633,7 +626,6 @@
             document.getElementById(b).style.background = "#bdc3c7"; 
             document.getElementById(b).style.color = "#2c3e50"; 
         });
-        
         document.getElementById('zonaTablero').style.display = 'none'; 
         document.getElementById('zonaClasificacion').style.display = 'none'; 
         document.getElementById('zonaClasificacionPura').style.display = 'none'; 
@@ -661,19 +653,21 @@
     document.getElementById('btnTabAdmin4').addEventListener('click', () => switchTab(4)); 
     document.getElementById('btnTabAdmin5').addEventListener('click', () => switchTab(5));
 
+    // ==========================================
+    // MENU 1: PREPARAR JORNADA
+    // ==========================================
     document.getElementById('btnGenerarCajasPartidos').addEventListener('click', () => {
         let num = parseInt(document.getElementById('numPartidosConfig').value); 
         let html = ""; 
         let opcionesPaises = `<option value="">-- Selecciona Equipo --</option>`;
-        Object.keys(seleccionesMundial).sort().forEach(pais => { 
-            opcionesPaises += `<option value="${pais}">${seleccionesMundial[pais]} ${pais}</option>`; 
+        Object.keys(codigosLiga).sort().forEach(eq => { 
+            opcionesPaises += `<option value="${eq}">${eq}</option>`; 
         });
         for(let i=0; i<num; i++) { 
             html += `<div class="fila" style="margin-bottom:12px; background:#fdfefe; padding:8px; border-radius:6px; border:1px solid #ddd;">
-                        <label style="font-weight:bold; width:80px;">Partido ${i+1}:</label>
-                        <select id="confPL_${i}" style="width:200px;">${opcionesPaises}</select> vs 
-                        <select id="confPV_${i}" style="width:200px;">${opcionesPaises}</select>
-                     </div>`; 
+            <label style="font-weight:bold; width:80px;">Partido ${i+1}:</label>
+            <select id="confPL_${i}" style="width:200px;">${opcionesPaises}</select> vs <select id="confPV_${i}" style="width:200px;">${opcionesPaises}</select>
+            </div>`; 
         }
         document.getElementById('cajasPartidosConfig').innerHTML = html;
     });
@@ -691,7 +685,7 @@
         for(let i=0; i<num; i++) { 
             let l = document.getElementById(`confPL_${i}`).value; 
             let v = document.getElementById(`confPV_${i}`).value; 
-            if(!l || !v) return alert("Selecciona selecciones oficiales para todos los partidos."); 
+            if(!l || !v) return alert("Selecciona equipos."); 
             partidos.push({ local: l, visita: v }); 
         }
         
@@ -702,6 +696,13 @@
         let pG_def = parseFloat(document.getElementById('premioGenDef').value); 
         let pG_pura = parseFloat(document.getElementById('premioGenPura').value);
         
+        const existSnap = await getDoc(doc(db, "config_jornadas", "jornada_" + jor)); 
+        let pub = false; let vot = false;
+        if(existSnap.exists()) { 
+            pub = existSnap.data().pronosticosPublicados || false; 
+            vot = existSnap.data().votacionesAbiertas || false; 
+        }
+
         let config = { 
             partidos: partidos, 
             fechaLimite: limQ, 
@@ -712,10 +713,9 @@
             pregIrlinha: document.getElementById('pregIrlinha').value, 
             pregSantinha: document.getElementById('pregSantinha').value, 
             premios: premios, 
-            pronosticosPublicados: false, 
-            votacionesAbiertas: false 
+            pronosticosPublicados: pub, 
+            votacionesAbiertas: vot 
         };
-        
         try { 
             await setDoc(doc(db, "config_jornadas", "jornada_" + jor), config, { merge: true }); 
             await setDoc(doc(db, "config_premios", "globales"), { genDef: pG_def, genPura: pG_pura }, { merge: true }); 
@@ -726,6 +726,7 @@
         } catch(e) {}
     });
 
+    // CARGAR PROVISIONAL
     document.getElementById('btnCargarConfigIda').addEventListener('click', async () => {
         let jor = document.getElementById('numJornadaCorregir').value;
         try {
@@ -741,16 +742,15 @@
 
             let html = "";
             configJornadaActual.partidos.forEach((p, i) => { 
-                let flagL = seleccionesMundial[p.local] || ""; 
-                let flagV = seleccionesMundial[p.visita] || ""; 
+                let flagL = p.local || ""; 
+                let flagV = p.visita || ""; 
                 let valL = prevReales && prevReales.partidos && prevReales.partidos[i] ? prevReales.partidos[i].split("-")[0] : "";
                 let valV = prevReales && prevReales.partidos && prevReales.partidos[i] ? prevReales.partidos[i].split("-")[1] : "";
-                
                 html += `<div class="fila" style="margin-bottom:6px;">
-                            <label style="width:260px; font-weight:bold;">${flagL} ${p.local} - ${flagV} ${p.visita}:</label>
-                            <input type="number" id="realPL_${i}" value="${valL}" min="0" style="width:60px; padding:4px;"> - 
-                            <input type="number" id="realPV_${i}" value="${valV}" min="0" style="width:60px; padding:4px;">
-                         </div>`; 
+                    <label style="width:260px; font-weight:bold;">${flagL} - ${flagV}:</label>
+                    <input type="number" id="realPL_${i}" value="${valL}" min="0" style="width:60px; padding:4px;"> - 
+                    <input type="number" id="realPV_${i}" value="${valV}" min="0" style="width:60px; padding:4px;">
+                </div>`; 
             });
             document.getElementById('contenedorPartidosReales').innerHTML = html; 
 
@@ -801,10 +801,7 @@
             const querySnapshot = await getDocs(pronosRef); 
             datosGlobales = []; 
             querySnapshot.forEach((doc) => { datosGlobales.push(doc.data()); });
-            if(datosGlobales.length === 0) { 
-                btn.innerText = "📥 Paso 1"; 
-                return alert("No hay apuestas."); 
-            }
+            if(datosGlobales.length === 0) { btn.innerText = "📥 Paso 1"; return alert("No hay apuestas."); }
 
             historicoGeneral = {}; 
             if (jor > 1) { 
@@ -848,10 +845,10 @@
                 let prevSan = evalsPrevias[jug.jugador] ? evalsPrevias[jug.jugador].statSan : "fallo";
 
                 htmlCorreccion += `<div style="background: white; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
-                    <h3 style="margin: 0;">👤 ${jug.jugador}</h3>
-                    <div><strong>Valerinha:</strong> "${val}" <select id="est_val_${i}"><option value="fallo" ${prevVal==='fallo'?'selected':''}>Fallo</option><option value="exacto" ${prevVal==='exacto'?'selected':''}>Acierto</option></select></div>
-                    <div><strong>Irlinha:</strong> "${irl}" <select id="est_irl_${i}"><option value="fallo" ${prevIrl==='fallo'?'selected':''}>Fallo</option><option value="exacto" ${prevIrl==='exacto'?'selected':''}>Acierto</option></select></div>
-                    <div><strong>Santinha:</strong> "${san}" <select id="est_san_${i}"><option value="exacto" ${prevSan==='exacto'?'selected':''}>Acierto</option><option value="fallo" ${prevSan==='fallo'?'selected':''}>Fallo</option></select></div>
+                    <h3 style="margin: 0; color:#2980b9;">👤 ${jug.jugador}</h3>
+                    <div style="margin-top:5px;"><strong>Valerinha:</strong> "${val}" <select id="est_val_${i}"><option value="fallo" ${prevVal==='fallo'?'selected':''}>Fallo</option><option value="exacto" ${prevVal==='exacto'?'selected':''}>Acierto</option></select></div>
+                    <div style="margin-top:5px;"><strong>Irlinha:</strong> "${irl}" <select id="est_irl_${i}"><option value="fallo" ${prevIrl==='fallo'?'selected':''}>Fallo</option><option value="exacto" ${prevIrl==='exacto'?'selected':''}>Acierto</option></select></div>
+                    <div style="margin-top:5px;"><strong>Santinha:</strong> "${san}" <select id="est_san_${i}"><option value="exacto" ${prevSan==='exacto'?'selected':''}>Acierto</option><option value="fallo" ${prevSan==='fallo'?'selected':''}>Fallo</option></select></div>
                 </div>`;
             });
             document.getElementById('listaCorreccionesTextos').innerHTML = htmlCorreccion; 
@@ -864,9 +861,11 @@
             if(isVotAbierta) { 
                 btnPaso3.innerText = "✅ VOTACIONES ABIERTAS"; 
                 btnPaso3.disabled = true; 
+                btnPaso3.style.background = "#27ae60"; 
             } else { 
                 btnPaso3.innerText = "🔓 Paso 3: ABRIR VOTACIONES VALERINHA"; 
                 btnPaso3.disabled = false; 
+                btnPaso3.style.background = "#27ae60"; 
             }
         } catch (error) { 
             btn.innerText = "📥 Paso 1"; 
@@ -874,6 +873,7 @@
         }
     });
 
+    // PASO 2: GUARDAR Y PUBLICAR PROVISIONAL (SIN ABRIR VOTACIONES, CERO CASTIGOS)
     document.getElementById('btnPaso2').addEventListener('click', async function() {
         let jor = parseInt(document.getElementById('numJornadaCorregir').value);
         
@@ -899,7 +899,6 @@
         await setDoc(doc(db, "provisional_jornada_" + jor, "RESULTADOS_REALES"), realResultsDoc); 
         window.realResultsActuales = realResultsDoc;
 
-        // MATEMÁTICA LIGA
         let ptEx = 5; let ptSig = 2;
         jugadoresProvisionales = [];
         
@@ -908,9 +907,10 @@
             j.partidos.forEach((p, idx) => { 
                 let stat = getStatus(resultadosReales[idx].l, resultadosReales[idx].v, p.local, p.visita); 
                 if (stat === "exacto") c_exactos++; else if (stat === "signo") c_signos++; 
-                let fL = seleccionesMundial[configJornadaActual.partidos[idx].local] || ""; 
-                let fV = seleccionesMundial[configJornadaActual.partidos[idx].visita] || ""; 
-                partidosGuardados.push({ matchText: `${fL} ${configJornadaActual.partidos[idx].local} - ${fV} ${configJornadaActual.partidos[idx].visita}`, texto: `${p.local}-${p.visita}`, stat: stat }); 
+                let cL = codigosLiga[configJornadaActual.partidos[idx].local] || (configJornadaActual.partidos[idx].local ? configJornadaActual.partidos[idx].local.substring(0,3).toUpperCase() : "");
+                let cV = codigosLiga[configJornadaActual.partidos[idx].visita] || (configJornadaActual.partidos[idx].visita ? configJornadaActual.partidos[idx].visita.substring(0,3).toUpperCase() : "");
+                
+                partidosGuardados.push({ matchText: `${cL} - ${cV}`, texto: `${p.local}-${p.visita}`, stat: stat }); 
             });
 
             let statTronpa = "blanco"; let p_tronpa = 0;
@@ -931,6 +931,7 @@
                 puntosBombaGarnacha: 0, puntosValerinhas: 0, puntosIrlinhas: 0, puntosSantinhas: 0, puntosTronpa: 0 
             };
 
+            // EN PROVISIONAL, TODO EL SALSEO VALE 0 Y EL CASTIGO NO EXISTE AÚN
             jugadoresProvisionales.push({ 
                 nombre: j.jugador, base: puntosBaseJornada, prev: prev, puntosPurosJornada: puntosPurosJornada, 
                 c_exactos, c_signos, p_bomba, p_tronpa, 
@@ -943,7 +944,7 @@
                 partidosVisuales: partidosGuardados, 
                 trT: `${j.tronpa.respuesta}/${j.tronpa.puntosJugados}`, statTronpa, 
                 bmT: `${j.bombaGarnacha.local}-${j.bombaGarnacha.visita}`, statBomba, 
-                p_val: 0, p_irl: 0, p_san: 0, dec_val: "-" 
+                p_val: 0, p_irl: 0, p_san: 0, dec_val: "⏳ Pendiente de voto" 
             });
         });
 
@@ -963,24 +964,25 @@
         
         try { 
             for (let j of configPintar) { await setDoc(doc(db, "provisional_jornada_" + jor, j.nombre), j); } 
-            alert("¡Progreso Guardado y Provisional Publicada!"); 
+            alert("¡Provisional Publicada!"); 
         } catch(e) {}
         
         pintarTablas(configPintar, "PROVISIONAL", configJornadaActual);
     });
 
+    // PASO 3 MANUAL: ABRIR VOTACIONES VALERINHA
     document.getElementById('btnPaso3_AbrirVotos').addEventListener('click', async function() {
         let jor = parseInt(document.getElementById('numJornadaCorregir').value);
-        if(!confirm("¿Abrir votaciones Valerinha para la Jornada " + jor + "?")) return;
+        if(!confirm("¿Abrir votaciones Valerinha para la Jornada " + jor + "? Asegúrate de que todos los partidos han acabado.")) return;
         try {
             await setDoc(doc(db, "config_jornadas", "jornada_" + jor), { votacionesAbiertas: true }, { merge: true });
             alert("¡Votaciones Abiertas! Los jugadores ya pueden lanzar sus Valerinhas.");
-            this.style.background = "#2ecc71";
             this.innerText = "✅ VOTACIONES ABIERTAS";
             this.disabled = true;
         } catch(e) { alert("Error"); }
     });
 
+    // FASE 3 DEFINITIVA Y LÓGICA DE VALERINHA (MÁXIMO 4, DESVÍOS Y CASTIGO)
     document.getElementById('btnPaso3').addEventListener('click', async function() {
         let jor = parseInt(document.getElementById('numJornadaFinal').value);
         let multiVS = 1;
@@ -1006,9 +1008,18 @@
             let votos = {}; 
             votosSnap.forEach(doc => { votos[doc.id] = doc.data(); });
             
+            let htmlV = `<table style="width:100%;"><thead><tr><th>Atacante</th><th>Tipo</th><th>Objetivo 1</th><th>Objetivo 2</th></tr></thead><tbody>`;
+            Object.keys(votos).forEach(id => {
+                let v = votos[id]; let icon = v.tipo === "sumar" ? "🛡️ Escudo (+)" : "⚔️ Ataque (-)";
+                htmlV += `<tr><td><strong>${id}</strong></td><td style="color:${v.tipo==='sumar'?'#27ae60':'#e74c3c'}">${icon}</td><td>${v.objetivo || "-"}</td><td>${v.objetivo2 || "-"}</td></tr>`;
+            });
+            if(Object.keys(votos).length === 0) htmlV += "<tr><td colspan='4'>Nadie ha votado</td></tr>";
+            htmlV += "</tbody></table>";
+            document.getElementById('tablaVisualVotosAdmin').innerHTML = htmlV;
+
             jugadoresProvisionales.forEach(j => { j.val_ganados = 0; j.val_perdidos = 0; j.dec_val = "-"; });
             
-            // ESCUDO ANTI-BULLYING
+            // LÓGICA ANTI-BULLYING
             let redirigidos = {}; let changed = true;
             while(changed) {
                 changed = false; let counts = {};
@@ -1016,8 +1027,7 @@
                     let v = votos[att];
                     if (v.tipo === "restar" && v.objetivo) {
                         let target = redirigidos[att] ? v.objetivo2 : v.objetivo;
-                        if(!counts[target]) counts[target] = [];
-                        counts[target].push(att);
+                        if(!counts[target]) counts[target] = []; counts[target].push(att);
                     }
                 });
                 for (let target in counts) {
@@ -1042,23 +1052,21 @@
                 }
             }
 
-            // PROCESAR VALERINHAS Y CASTIGOS DE INACTIVIDAD
+            // APLICAR VOTOS FINALES Y CASTIGOS DE INACTIVIDAD
             jugadoresProvisionales.forEach(j => {
                 if (j.statVal === "exacto") {
                     if (votos[j.nombre]) {
                         let miVoto = votos[j.nombre];
                         if (miVoto.tipo === "sumar") { 
-                            j.val_ganados += 1; 
-                            j.dec_val = "🛡️ Se suma +" + multiVS; 
+                            j.val_ganados += 1; j.dec_val = "🛡️ Se suma +" + multiVS; 
                         } else if (miVoto.tipo === "restar" && miVoto.objetivo !== "") {
-                            let isDiverted = redirigidos[j.nombre]; 
-                            let finalTarget = isDiverted ? miVoto.objetivo2 : miVoto.objetivo;
+                            let isDiverted = redirigidos[j.nombre]; let finalTarget = isDiverted ? miVoto.objetivo2 : miVoto.objetivo;
                             j.dec_val = `⚔️ Resta -${multiVS} a ${finalTarget}` + (isDiverted ? " (Desvío)" : "");
                             let target = jugadoresProvisionales.find(p => p.nombre === finalTarget);
                             if (target) target.val_perdidos -= 1;
                         }
                     } else {
-                        // Castigo por inactividad
+                        // AQUÍ SE APLICA EL CASTIGO POR NO VOTAR (Solo en Definitiva)
                         j.val_perdidos -= 1;
                         j.dec_val = "❌ Castigo (No votó)";
                     }
@@ -1068,7 +1076,7 @@
             jugadoresProvisionales.forEach(j => { 
                 if (j.val_perdidos < -4) j.val_perdidos = -4; 
                 j.p_val = (j.val_ganados + j.val_perdidos) * multiVS; 
-                j.totalJornada = j.base + j.p_val; 
+                j.totalJornada = j.base + j.p_val; // SÓLO BASE + VALERINHA
                 j.generalTrasVal = j.prev.puntosAcumulados + j.totalJornada; 
             });
 
@@ -1088,7 +1096,7 @@
             if (j.statIrl === "exacto" && j.generalTrasVal <= puntosUltimoGenTrasVal + 4) j.p_irl = multiVS; 
             if (j.statSan === "fallo" && j.generalTrasVal >= puntosPrimeroGenTrasVal - 4) j.p_san = -multiVS;
             
-            // Aislar IRL y SAN de totalJornada
+            // 🔥 REGLA LA LIGA: IRLINHA Y SANTINHA SOLO AFECTAN A LA GENERAL, NO A LA JORNADA
             j.totalJornada = j.base + j.p_val; 
             j.totalGeneral = j.generalTrasVal + j.p_irl + j.p_san; 
             
@@ -1550,14 +1558,16 @@
     function pintarTablas(listaJugadores, titulo, configJor = {}, containerPrefix = "Jugador", prevRankingMap = {}) {
         let jorStr = (containerPrefix === "Jugador") ? document.getElementById('jorConsulta').value : (containerPrefix === "EnJuego" ? document.getElementById('jorConsultaEnJuego').value : window.jorQuinielaActual);
         let isDef = (jorStr === "DEFINITIVA" || containerPrefix === "Jugador" || containerPrefix === "EnJuego");
+        let isHistorialDefinitivoGlobal = (containerPrefix === "Jugador" && jorStr === "DEFINITIVA");
         
+        // MATEMÁTICAS APLICADAS PARA ORDENAR BIEN INCLUSO J1 Y LA GENERAL
         let tablaGeneral = [...listaJugadores].sort((a, b) => { 
-            let ptsA = isDef ? (a.puntosFinalesLiga || a.totalGeneral || 0) : (a.totalGeneral || 0);
-            let ptsB = isDef ? (b.puntosFinalesLiga || b.totalGeneral || 0) : (b.totalGeneral || 0);
+            let ptsA = isHistorialDefinitivoGlobal ? (a.puntosFinalesLiga || a.totalGeneral || 0) : (a.totalGeneral || 0);
+            let ptsB = isHistorialDefinitivoGlobal ? (b.puntosFinalesLiga || b.totalGeneral || 0) : (b.totalGeneral || 0);
             if(ptsB !== ptsA) return ptsB - ptsA; 
-            if(Number(b.c_exactos_gen) !== Number(a.c_exactos_gen)) return Number(b.c_exactos_gen) - Number(a.c_exactos_gen); 
-            if(Number(b.c_signos_gen) !== Number(a.c_signos_gen)) return Number(b.c_signos_gen) - Number(a.c_signos_gen); 
-            return (ptsB - Number(b.puntosPurosAcumulados)) - (ptsA - Number(a.puntosPurosAcumulados)); 
+            if(Number(b.c_exactos_gen || 0) !== Number(a.c_exactos_gen || 0)) return Number(b.c_exactos_gen || 0) - Number(a.c_exactos_gen || 0); 
+            if(Number(b.c_signos_gen || 0) !== Number(a.c_signos_gen || 0)) return Number(b.c_signos_gen || 0) - Number(a.c_signos_gen || 0); 
+            return (ptsB - Number(b.puntosPurosAcumulados || 0)) - (ptsA - Number(a.puntosPurosAcumulados || 0)); 
         });
 
         let tablaJornada = [...tablaGeneral].sort((a, b) => {
@@ -1572,26 +1582,32 @@
         
         tablaJornada.forEach(j => {
             thNom += `<th>${j.nombre.substring(0,6)}</th>`; 
-            j.partidosVisuales.forEach((p, idx) => { filasPartidos[idx] += `<td class="${p.stat}">${p.texto}</td>`; });
-            tdTr += `<td class="${j.statTronpa}">${j.trT}</td>`; 
-            tdBm += `<td class="${j.statBomba}">${j.bmT}</td>`; 
-            tdVa1 += `<td class="${j.statVal}">${j.valT}</td>`;
+            j.partidosVisuales.forEach((p, idx) => { 
+                filasPartidos[idx] += `<td><span class="${p.stat}">${p.texto}</span></td>`; 
+            });
+            tdTr += `<td><span class="${j.statTronpa}">${j.trT}</span></td>`; 
+            tdBm += `<td><span class="${j.statBomba}">${j.bmT}</span></td>`; 
+            tdVa1 += `<td><span class="${j.statVal}">${j.valT}</span></td>`;
+            
             let valPts = Number(j.p_val) || 0; 
             let valClass = valPts > 0 ? "exacto" : (valPts < 0 ? "fallo" : ""); 
             let valText = valPts > 0 ? `+${valPts}` : (valPts === 0 ? "" : valPts); 
-            tdVa2 += `<td class="${valClass}">${valText}</td>`;
+            tdVa2 += `<td><span class="${valClass}">${valText}</span></td>`;
+            
             let dVal = j.dec_val || "-"; 
             let decClass = dVal.includes("🛡️") ? "exacto" : (dVal.includes("⚔️") || dVal.includes("❌") ? "fallo" : ""); 
-            tdVaDec += `<td class="${decClass}" style="font-size:11px;">${dVal}</td>`;
-            tdIr += `<td class="${j.statIrl}">${j.irlT} (${j.p_irl})</td>`; 
-            tdSa += `<td class="${j.statSan}">${j.sanT} (${j.p_san})</td>`; 
+            tdVaDec += `<td><span class="${decClass}">${dVal}</span></td>`;
+            
+            tdIr += `<td><span class="${j.statIrl}">${j.irlT} (${j.p_irl})</span></td>`; 
+            tdSa += `<td><span class="${j.statSan}">${j.sanT} (${j.p_san})</span></td>`; 
             tdTot += `<td class="total-pts">${j.totalJornada}</td>`;
         });
-
+        
         let resPartidos = window.realResultsActuales?.partidos || []; 
         let resTronpa = window.realResultsActuales?.tronpa || "-"; 
         let resBomba = window.realResultsActuales?.bomba || "-";
         
+        // EL BLINDAJE CONTRA EL ERROR DE LA JORNADA 1 ESTÁ AQUÍ
         let htmlPartidosTerminado = filasPartidos.map((f, i) => { 
             let lLoc = ""; let lVis = "";
             if (configJor && configJor.partidos && configJor.partidos[i]) {
@@ -1602,24 +1618,29 @@
             let cV = codigosLiga[lVis] || (lVis ? lVis.substring(0,3).toUpperCase() : "");
             let lbl = (lLoc && lVis) ? `<span style="white-space:nowrap">${equiposLiga[lLoc]||''} ${cL}</span> - <span style="white-space:nowrap">${equiposLiga[lVis]||''} ${cV}</span>` : `Partido ${i+1}`;
             let rRes = resPartidos[i] || "-"; 
-            return `<tr><td><strong>${lbl}</strong></td><td style="font-weight:bold; background:rgba(0,0,0,0.5); color:white;">${rRes}</td>${f}</tr>`; 
+            return `<tr><td><strong>${lbl}</strong></td><td style="background:rgba(0,0,0,0.5);">${rRes}</td>${f}</tr>`; 
         }).join("");
-        
+
         let tdNomRow = tablaJornada.map(j => `<td>${j.nombre}</td>`).join("");
         
-        let qTr = configJor.pregTronpa ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregTronpa}</span>` : ''; let qBm = configJor.pregBomba ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregBomba}</span>` : ''; let qVa = configJor.pregValerinha ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregValerinha}</span>` : ''; let qIr = configJor.pregIrlinha ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregIrlinha}</span>` : ''; let qSa = configJor.pregSantinha ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregSantinha}</span>` : '';
+        let qTr = configJor.pregTronpa ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregTronpa}</span>` : ''; 
+        let qBm = configJor.pregBomba ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregBomba}</span>` : ''; 
+        let qVa = configJor.pregValerinha ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregValerinha}</span>` : ''; 
+        let qIr = configJor.pregIrlinha ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregIrlinha}</span>` : ''; 
+        let qSa = configJor.pregSantinha ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregSantinha}</span>` : '';
 
         let txtTituloMatriz = containerPrefix === "EnJuego" ? `JORNADA ${jorStr} (Definitiva)` : `JORNADA ${jorStr}`;
         let tabHTML = `<h2>📊 RESULTADOS ${txtTituloMatriz}</h2><div class="table-container-matriz"><table class="tabla-matriz"><thead><tr><th>Partido</th><th style="background:rgba(255,255,255,0.05);">R</th> ${thNom} </tr></thead><tbody>${htmlPartidosTerminado}<tr><td><strong>TroNpá!</strong>${qTr}</td><td>${resTronpa}</td> ${tdTr} </tr><tr><td><strong>Bomba Garnacha</strong>${qBm}</td><td>${resBomba}</td> ${tdBm} </tr><tr><td><strong>Valerinha</strong>${qVa}</td><td>-</td> ${tdVa1} </tr><tr><td><strong>Ptos Valerinha</strong></td><td>-</td> ${tdVa2} </tr><tr><td><strong>Acción</strong></td><td>-</td> ${tdVaDec} </tr><tr><td><strong>Irlinha</strong>${qIr}</td><td>-</td> ${tdIr} </tr><tr><td><strong>Santinha</strong>${qSa}</td><td>-</td> ${tdSa} </tr><tr><td><strong>TOTAL JORNADA</strong></td><td>-</td> ${tdTot} </tr><tr><td><strong>JUGADOR</strong></td><td>-</td> ${tdNomRow} </tr></tbody></table></div>`;
         
-        document.getElementById('zonaTablero' + containerPrefix).innerHTML = tabHTML; document.getElementById('zonaTablero' + containerPrefix).style.display = "block";
+        document.getElementById('zonaTablero' + containerPrefix).innerHTML = tabHTML; 
+        document.getElementById('zonaTablero' + containerPrefix).style.display = "block";
         
         let htmlClasif = `<div class="table-container-clasif"><table class="tabla-clasif"><thead><tr><th class="th-clasif">POS</th><th class="th-clasif">JUGADOR</th><th class="th-clasif" style="color:var(--accent-gold);">TOTAL GENERAL</th><th class="th-clasif">EXACTOS ACUM.</th><th class="th-clasif">PRONÓSTICOS ACUM.</th><th class="th-clasif">BOMBA ACUM.</th><th class="th-clasif">VALERINHAS ACUM.</th><th class="th-clasif">IRLINHAS ACUM.</th><th class="th-clasif">SANTINHAS ACUM.</th><th class="th-clasif">TroNpá! ACUM.</th>`;
-        if(jorStr === "DEFINITIVA") htmlClasif += `<th style="color:#f472b6;">Pts. EXTRA</th>`; 
+        if(isHistorialDefinitivoGlobal) htmlClasif += `<th style="color:#f472b6;">Pts. EXTRA</th>`; 
         htmlClasif += `</tr></thead><tbody>`;
         
         tablaGeneral.forEach((j, idx) => { 
-            let tGen = isDef ? (j.puntosFinalesLiga || j.totalGeneral || 0) : (j.totalGeneral || 0);
+            let tGen = isHistorialDefinitivoGlobal ? (j.puntosFinalesLiga || j.totalGeneral || 0) : (j.totalGeneral || 0); 
             let arrow = ""; 
             if (isDef && prevRankingMap && prevRankingMap[j.nombre]) { 
                 let p = prevRankingMap[j.nombre]; let c = idx + 1; 
@@ -1628,7 +1649,7 @@
                 else arrow = " <span style='color:var(--text-muted); font-size:12px; font-weight:900;'>=</span>"; 
             }
             htmlClasif += `<tr><td class="td-pos">${idx + 1}</td><td class="td-nombre">${j.nombre}${arrow}</td><td class="td-total-gen">${tGen} pts</td><td>${j.c_exactos_gen}</td><td>${j.c_signos_gen}</td><td>${j.p_bomba_gen}</td><td>${j.p_val_gen}</td><td>${j.p_irl_gen}</td><td>${j.p_san_gen}</td><td>${j.p_tronpa_gen}</td>`; 
-            if(jorStr === "DEFINITIVA") htmlClasif += `<td style="font-weight:bold; color:#f472b6;">${j.puntosEspecialesExtra || 0}</td>`; 
+            if(isHistorialDefinitivoGlobal) htmlClasif += `<td style="font-weight:bold; color:#f472b6;">${j.puntosEspecialesExtra || 0}</td>`; 
             htmlClasif += `</tr>`; 
         }); 
         htmlClasif += `</tbody></table></div>`; 
@@ -1656,22 +1677,36 @@
                 htmlPura += `<tr><td class="td-pos">${idx + 1}</td><td class="td-nombre">${j.nombre}</td><td style="font-weight:bold; font-size:16px; color:var(--accent-blue);">${pts} pts</td><td>${j.c_exactos_gen||0}</td><td>${j.c_signos_gen||0}</td></tr>`; 
             });
             htmlPura += `</tbody></table></div>`; 
-            document.getElementById('tablaClasificacionPura' + containerPrefix).innerHTML = htmlPura; 
-            document.getElementById('zonaClasificacionPura' + containerPrefix).style.display = "block";
+            let zonaClassPura = document.getElementById('tablaClasificacionPura' + containerPrefix);
+            if(zonaClassPura) zonaClassPura.innerHTML = htmlPura; 
+            let zonaClassDiv = document.getElementById('zonaClasificacionPura' + containerPrefix);
+            if(zonaClassDiv) zonaClassDiv.style.display = "block";
         }
     }
 
     function pintarGanancias(listaJugadores, ganadoresDeLaJornada, containerPrefix = "Jugador") {
         if(!ganadoresDeLaJornada) ganadoresDeLaJornada = []; 
-        document.getElementById('historialGanadores' + containerPrefix).innerHTML = ganadoresDeLaJornada.map(txt => `<p style="margin:5px 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:5px;">${txt}</p>`).join("");
+        let histG = document.getElementById('historialGanadores' + containerPrefix);
+        if(histG) histG.innerHTML = ganadoresDeLaJornada.map(txt => `<p style="margin:5px 0; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:5px;">${txt}</p>`).join("");
+        
         let rankingGanancias = [...listaJugadores].sort((a, b) => Number(b.gananciasTotales) - Number(a.gananciasTotales));
         let htmlGanancias = `<table class="tabla-clasif"><thead><tr><th style="text-align:left;">JUGADOR</th><th style="text-align:right;">SALDO</th></tr></thead><tbody>`;
-        rankingGanancias.forEach(g => { htmlGanancias += `<tr><td style="text-align:left;"><strong>${g.nombre}</strong></td><td style="text-align:right; color:var(--accent-green); font-weight:bold;">${Number(g.gananciasTotales).toFixed(2)} €</td></tr>`; });
-        htmlGanancias += `</tbody></table>`; document.getElementById('tablaGananciasTotales' + containerPrefix).innerHTML = htmlGanancias; document.getElementById('zonaGanancias' + containerPrefix).style.display = "block";
+        rankingGanancias.forEach(g => { 
+            htmlGanancias += `<tr><td style="text-align:left;"><strong>${g.nombre}</strong></td><td style="text-align:right; color:var(--accent-green); font-weight:bold;">${Number(g.gananciasTotales).toFixed(2)} €</td></tr>`; 
+        });
+        htmlGanancias += `</tbody></table>`; 
+        let tablaG = document.getElementById('tablaGananciasTotales' + containerPrefix);
+        if(tablaG) tablaG.innerHTML = htmlGanancias; 
+        let zonaG = document.getElementById('zonaGanancias' + containerPrefix);
+        if(zonaG) zonaG.style.display = "block";
     }
 
     function pintarProvisionalJugador(listaJugadores, jor, configJor = {}, containerPrefix = "Prov", prevRankingMap = {}) {
-        let qTr = configJor.pregTronpa ? `<br><span>${configJor.pregTronpa}</span>` : ''; let qBm = configJor.pregBomba ? `<br><span>${configJor.pregBomba}</span>` : ''; let qVa = configJor.pregValerinha ? `<br><span>${configJor.pregValerinha}</span>` : ''; let qIr = configJor.pregIrlinha ? `<br><span>${configJor.pregIrlinha}</span>` : ''; let qSa = configJor.pregSantinha ? `<br><span>${configJor.pregSantinha}</span>` : '';
+        let qTr = configJor.pregTronpa ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregTronpa}</span>` : ''; 
+        let qBm = configJor.pregBomba ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregBomba}</span>` : ''; 
+        let qVa = configJor.pregValerinha ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregValerinha}</span>` : ''; 
+        let qIr = configJor.pregIrlinha ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregIrlinha}</span>` : ''; 
+        let qSa = configJor.pregSantinha ? `<br><span style="font-size:8px; font-weight:normal; color:var(--text-muted); display:block; line-height:1; margin-top:2px;">${configJor.pregSantinha}</span>` : '';
         
         let tablaGeneral = [...listaJugadores].sort((a, b) => {
             if(Number(b.totalGeneral || 0) !== Number(a.totalGeneral || 0)) return Number(b.totalGeneral || 0) - Number(a.totalGeneral || 0); 
@@ -1685,18 +1720,28 @@
             return diff !== 0 ? diff : a.nombre.localeCompare(b.nombre);
         });
 
-        let thNom = ""; let numPartidosVisuales = tablaJornada[0].partidosVisuales.length; let filasPartidos = Array(numPartidosVisuales).fill("");
+        let thNom = ""; 
+        let numPartidosVisuales = tablaJornada[0].partidosVisuales.length; 
+        let filasPartidos = Array(numPartidosVisuales).fill("");
         let tdTr = "", tdBm = "", tdVa1 = "", tdVa2 = "", tdIr = "", tdSa = "", tdTot = "";
         
         tablaJornada.forEach(j => { 
             thNom += `<th>${j.nombre.substring(0,6)}</th>`; 
             j.partidosVisuales.forEach((p, idx) => { filasPartidos[idx] += `<td><span class="${p.stat}">${p.texto}</span></td>`; }); 
-            tdTr += `<td><span class="${j.statTronpa}">${j.trT}</span></td>`; tdBm += `<td><span class="${j.statBomba}">${j.bmT}</span></td>`; tdVa1 += `<td><span class="${j.statVal}">${j.valT}</span></td>`; tdVa2 += `<td></td>`; 
-            tdIr += `<td><span class="${j.statIrl}">${j.irlT} (0)</span></td>`; tdSa += `<td><span class="${j.statSan}">${j.sanT} (0)</span></td>`; tdTot += `<td class="total-pts">${j.totalJornada}</td>`; 
+            tdTr += `<td><span class="${j.statTronpa}">${j.trT}</span></td>`; 
+            tdBm += `<td><span class="${j.statBomba}">${j.bmT}</span></td>`; 
+            tdVa1 += `<td><span class="${j.statVal}">${j.valT}</span></td>`; 
+            tdVa2 += `<td></td>`; 
+            tdIr += `<td><span class="${j.statIrl}">${j.irlT} (0)</span></td>`; 
+            tdSa += `<td><span class="${j.statSan}">${j.sanT} (0)</span></td>`; 
+            tdTot += `<td class="total-pts">${j.totalJornada}</td>`; 
         });
         
-        let resPartidos = window.realResultsActuales?.partidos || [], resTronpa = window.realResultsActuales?.tronpa || "-", resBomba = window.realResultsActuales?.bomba || "-";
+        let resPartidos = window.realResultsActuales?.partidos || []; 
+        let resTronpa = window.realResultsActuales?.tronpa || "-"; 
+        let resBomba = window.realResultsActuales?.bomba || "-";
         
+        // EL BLINDAJE CONTRA EL ERROR DE LA JORNADA 1 EN PROVISIONAL
         let htmlPartidosTerminado = filasPartidos.map((f, i) => { 
             let lLoc = ""; let lVis = "";
             if (configJor && configJor.partidos && configJor.partidos[i]) {
@@ -1706,7 +1751,8 @@
             let cL = codigosLiga[lLoc] || (lLoc ? lLoc.substring(0,3).toUpperCase() : "");
             let cV = codigosLiga[lVis] || (lVis ? lVis.substring(0,3).toUpperCase() : "");
             let lbl = (lLoc && lVis) ? `<span style="white-space:nowrap">${equiposLiga[lLoc]||''} ${cL}</span> - <span style="white-space:nowrap">${equiposLiga[lVis]||''} ${cV}</span>` : `Partido ${i+1}`;
-            return `<tr><td><strong>${lbl}</strong></td><td style="background:rgba(0,0,0,0.5);">${resPartidos[i] || "-"}</td>${f}</tr>`; 
+            let rRes = resPartidos[i] || "-"; 
+            return `<tr><td><strong>${lbl}</strong></td><td style="background:rgba(0,0,0,0.5);">${rRes}</td>${f}</tr>`; 
         }).join("");
         
         let tdNomRow = tablaJornada.map(j => `<td>${j.nombre}</td>`).join("");
@@ -1727,15 +1773,21 @@
         htmlClasif += `</tbody></table></div>`; 
 
         if(containerPrefix === "Prov") { 
-            document.getElementById('tableroProvJugador').innerHTML = tabHTML; 
-            document.getElementById('clasifProvJugador').innerHTML = `<h2>🏆 CLASIFICACIÓN PROVISIONAL GENERAL</h2>` + htmlClasif; 
-            document.getElementById('zonaTablasProvisionalesJugador').style.display = "block"; 
+            let tProv = document.getElementById('tableroProvJugador');
+            if(tProv) tProv.innerHTML = tabHTML; 
+            let cProv = document.getElementById('clasifProvJugador');
+            if(cProv) cProv.innerHTML = `<h2>🏆 CLASIFICACIÓN PROVISIONAL GENERAL</h2>` + htmlClasif; 
+            let zProv = document.getElementById('zonaTablasProvisionalesJugador');
+            if(zProv) zProv.style.display = "block"; 
         } else { 
-            document.getElementById('zonaTableroEnJuego').innerHTML = tabHTML; 
-            document.getElementById('zonaTableroEnJuego').style.display = "block"; 
-            document.getElementById('tituloClasificacionEnJuego').innerText = `🏆 CLASIFICACIÓN PROVISIONAL J${jor}`;
-            document.getElementById('tablaClasificacionEnJuego').innerHTML = htmlClasif;
-            document.getElementById('zonaClasificacionEnJuego').style.display = "block";
+            let tJuego = document.getElementById('zonaTableroEnJuego');
+            if(tJuego) { tJuego.innerHTML = tabHTML; tJuego.style.display = "block"; }
+            let tClasif = document.getElementById('tituloClasificacionEnJuego');
+            if(tClasif) tClasif.innerText = `🏆 CLASIFICACIÓN PROVISIONAL J${jor}`;
+            let tClasifTabla = document.getElementById('tablaClasificacionEnJuego');
+            if(tClasifTabla) tClasifTabla.innerHTML = htmlClasif;
+            let zClasif = document.getElementById('zonaClasificacionEnJuego');
+            if(zClasif) zClasif.style.display = "block";
         }
     }
 </script>
