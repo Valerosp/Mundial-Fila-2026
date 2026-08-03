@@ -1011,10 +1011,11 @@
       <div id="vistaEspeciales" style="display:none;">
         <div class="tarjeta" style="background: linear-gradient(135deg, #0d5f49 0%, #06382a 100%) !important;">
           <h2 style="margin-top:0; color:white !important; font-size:22px; font-weight:900;">⭐ APUESTAS ESPECIALES</h2>
-          <p style="font-size:13px; margin-bottom:15px; color:#d1fae5 !important;">Pronósticos globales del torneo. <strong>Solo una oportunidad</strong> antes de arrancar.</p>
+          <p style="font-size:13px; margin-bottom:15px; color:#d1fae5 !important;">Pronósticos globales de La Liga. <strong>Solo una oportunidad</strong> antes de arrancar.</p>
           <div id="textoEstadoEspeciales" style="font-size:14px; font-weight:bold; color:white; margin-bottom:10px; display:none; background:rgba(0,0,0,0.3); padding:10px; border-radius:8px; text-align:center;">APUESTAS ESPECIALES NO DISPONIBLES</div>
           <button id="btnVerEspeciales" class="btn-principal" style="background:white !important; color:var(--accent-green) !important; display:none;"></button>
         </div>
+        
         <div id="mensajeEspecialesCerrado" style="display:none; padding:15px; font-weight:bold; margin-bottom:20px; text-align:center; font-size:14px; border-radius:8px;"></div>
         
         <div id="zonaFormularioEspeciales" class="tarjeta" style="display:none; border-left:4px solid var(--accent-green) !important;">
@@ -1350,7 +1351,7 @@
         }).join("");
 
         let html = `
-          <h3 style="text-align:center; color:white; margin-top:0; font-size:16px;">${equiposLiga[local]||''} ${local} <span style="color:var(--text-muted); font-size:12px; margin:0 5px;">VS</span> ${visita} ${equiposLiga[visita]||''}</h3>
+          <h3 style="text-align:center; color:white; margin-top:0; font-size:16px;">${local} <span style="color:var(--text-muted); font-size:12px; margin:0 5px;">VS</span> ${visita}</h3>
           <div style="background:rgba(0,0,0,0.3); padding:15px; border-radius:12px; margin-top:20px;">
             <h4 style="margin:0 0 10px 0; color:var(--text-muted); font-size:11px;">📊 PROBABILIDAD REAL</h4>
             <div style="margin-bottom:10px;"><div style="display:flex; justify-content:space-between; font-size:13px; color:white; font-weight:bold;"><span>Gana ${local}</span><span>${winL.toFixed(0)}%</span></div><div class="barra-fondo"><div class="barra-progreso" style="width:${winL}%; background:#3b82f6;"></div></div></div>
@@ -1725,7 +1726,7 @@
                 } catch(e) { console.warn("Error cargando home provisional", e); }
             }
 
-            // ASEGURAR QUE EL RANKING CARGA LA JORNADA CERRADA INMEDIATAMENTE
+            // ASEGURAR QUE EL RANKING CARGA LA JORNADA CERRADA INMEDIATAMENTE AL ENTRAR
             let selJ = document.getElementById('jorConsulta'); 
             if (selJ) {
                 selJ.value = jorCerrada === 0 ? 1 : jorCerrada;
@@ -1734,7 +1735,7 @@
 
         } catch (e) {}
 
-        // 2. CARGAMOS ESTADO ESPECIALES
+        // 2. CARGAMOS ESTADO ESPECIALES CON PROTECCION DE FECHA EN TIEMPO REAL
         try {
             const snapEsp = await getDoc(doc(db, "config_especiales", "general"));
             let estadoEsp = "oculto"; 
@@ -1748,12 +1749,18 @@
             let txtEsp = document.getElementById('textoEstadoEspeciales'); 
             let tarjetaInicioEsp = document.getElementById('tarjetaEspecialesInicio'); 
             let divInfoEsp = document.getElementById('infoEstadoEspeciales');
+            
+            let isExpirado = false;
+            if (limiteEsp) {
+                let limiteDate = new Date(limiteEsp);
+                if (new Date() > limiteDate) isExpirado = true;
+            }
 
             if (estadoEsp === "oculto") { 
                 btnEsp.style.display = "none"; 
                 txtEsp.style.display = "block"; 
                 tarjetaInicioEsp.style.display = "none"; 
-            } else if (estadoEsp === "abierto") { 
+            } else if (estadoEsp === "abierto" && !isExpirado) { 
                 btnEsp.style.display = "block"; 
                 btnEsp.innerText = "APUESTAS ESPECIALES DISPONIBLES"; 
                 txtEsp.style.display = "none"; 
@@ -1762,6 +1769,12 @@
                     let dL = new Date(limiteEsp).toLocaleString([], {year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute:'2-digit'}); 
                     divInfoEsp.innerHTML = `¡Periodo Abierto!<br><span style="font-size:13px; color:var(--accent-green); font-weight:normal;">Límite: ${dL}</span>`; 
                 } 
+            } else if (estadoEsp === "abierto" && isExpirado) {
+                btnEsp.style.display = "block"; 
+                btnEsp.innerText = "COMPROBAR APUESTAS ESPECIALES"; 
+                txtEsp.style.display = "none"; 
+                tarjetaInicioEsp.style.display = "block";
+                divInfoEsp.innerHTML = `Plazo Finalizado<br><span style="font-size:13px; color:#ef4444; font-weight:normal;">Esperando cierre oficial</span>`; 
             } else if (estadoEsp === "cerrado") { 
                 btnEsp.style.display = "block"; 
                 btnEsp.innerText = "COMPROBAR APUESTAS ESPECIALES"; 
@@ -1826,8 +1839,6 @@
             let htmlPartidos = "";
             if(configQ_Data && configQ_Data.partidos) {
                 configQ_Data.partidos.forEach((p, i) => { 
-                    let flagL = equiposLiga[p.local] || ""; 
-                    let flagV = equiposLiga[p.visita] || ""; 
                     let codL = codigosLiga[p.local] || (p.local ? p.local.substring(0,3).toUpperCase() : ""); 
                     let codV = codigosLiga[p.visita] || (p.visita ? p.visita.substring(0,3).toUpperCase() : "");
                     
@@ -2115,12 +2126,23 @@
                 document.getElementById('zonaFormularioEspeciales').style.display = "none"; 
                 document.getElementById('zonaMatrizEspecialesJugador').style.display = "none";
             } else if(cfgSnap.data().estado === "abierto") {
+                let limiteDate = cfgSnap.data().fechaLimite ? new Date(cfgSnap.data().fechaLimite) : null;
+                let isExpirado = limiteDate && new Date() > limiteDate;
+
                 const resSnap = await getDoc(doc(db, "pronosticos_especiales", window.jugadorLogueado));
                 if(resSnap.exists()) {
                     let m = document.getElementById('mensajeEspecialesCerrado'); 
                     m.innerText = "✅ Ya has enviado tus Apuestas Especiales."; 
                     m.style.background = "rgba(16,172,132,0.1)"; 
                     m.style.color = "var(--accent-green)"; 
+                    m.style.display = "block"; 
+                    document.getElementById('zonaFormularioEspeciales').style.display = "none"; 
+                    document.getElementById('zonaMatrizEspecialesJugador').style.display = "none";
+                } else if (isExpirado) {
+                    let m = document.getElementById('mensajeEspecialesCerrado'); 
+                    m.innerText = "⏳ Plazo expirado. No puedes enviar tus apuestas especiales."; 
+                    m.style.background = "rgba(238,82,83,0.1)"; 
+                    m.style.color = "var(--accent-red)"; 
                     m.style.display = "block"; 
                     document.getElementById('zonaFormularioEspeciales').style.display = "none"; 
                     document.getElementById('zonaMatrizEspecialesJugador').style.display = "none";
