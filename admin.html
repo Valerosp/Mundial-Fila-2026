@@ -407,7 +407,7 @@
             <div style="margin-top:15px; display:flex; gap:10px; flex-wrap:wrap;">
                 <button id="btnAbrirEspeciales" class="btn-secundario" style="background:#27ae60; color:white; padding:12px; font-size:14px;">👁️ Abrir Plazo Jugadores</button>
                 <button id="btnActualizarPlazoEspeciales" class="btn-secundario" style="background:#f39c12; color:white; padding:12px; font-size:14px;">💾 Actualizar Plazo</button>
-                <button id="btnCerrarPublicarEspeciales" class="btn-secundario" style="background:#c0392b; color:white; padding:12px; font-size:14px;">🔒 Forzar Cierre</button>
+                <button id="btnCerrarEspeciales" class="btn-secundario" style="background:#c0392b; color:white; padding:12px; font-size:14px;">🔒 Forzar Cierre</button>
             </div>
         </div>
         
@@ -416,7 +416,7 @@
             <button id="btnCargarRespuestasEspeciales" class="btn-secundario" style="background:#2980b9; color:white;">Cargar Envíos Recibidos</button>
             <div id="zonaRespuestasEspeciales" style="margin-top:20px; display:none; overflow-x:auto;">
                 <table id="tablaChivatosEspeciales"></table>
-                <div style="margin-top: 15px; display:flex; gap:10px;">
+                <div style="display:flex; gap:10px; margin-top:15px;">
                     <button id="btnPublicarVisEspeciales" class="btn-secundario" style="background:#8e44ad; color:white; display:none;">👁️ Hacer Públicas para Lectura</button>
                     <button id="btnBorrarTodasEspeciales" class="btn-secundario" style="background:#c0392b; color:white;">🗑️ Borrar TODAS</button>
                 </div>
@@ -1399,6 +1399,12 @@
         let limite = document.getElementById('limiteEspecialesConfig').value;
         if(!limite) return alert("⚠️ Debes indicar una Fecha Límite para las Especiales.");
         try { await setDoc(doc(db, "config_especiales", "general"), { estado: "abierto", fechaLimite: limite }, { merge: true }); alert("¡Abiertas para los jugadores!"); } catch(e){} 
+    });
+
+    document.getElementById('btnActualizarPlazoEspeciales').addEventListener('click', async () => { 
+        let limite = document.getElementById('limiteEspecialesConfig').value;
+        if(!limite) return alert("⚠️ Debes indicar una Fecha Límite para actualizar.");
+        try { await setDoc(doc(db, "config_especiales", "general"), { fechaLimite: limite }, { merge: true }); alert("¡Plazo actualizado con éxito!"); } catch(e){} 
     });
     
     document.getElementById('btnCerrarEspeciales').addEventListener('click', async () => { 
